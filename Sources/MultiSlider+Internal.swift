@@ -222,7 +222,7 @@ extension MultiSlider {
                 }
             }
             if 0 == step { step = relativeStepSize }
-            value += stride(from: startValue, through: maximumValue, by: step)
+            if startValue != maximumValue { value += stride(from: startValue, through: maximumValue, by: step) }
         }
         if value.count > count { // don't add "else", since prev calc may add too many values in some cases
             value.removeLast(value.count - count)
